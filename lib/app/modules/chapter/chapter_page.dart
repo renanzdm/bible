@@ -25,7 +25,9 @@ class _ChapterPageState extends State<ChapterPage> {
           Expanded(
             child: ChapterWidget(
               numberChapters: _bookController.nunberChapter,
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/versemodule');
+              },
             ),
           )
         ],

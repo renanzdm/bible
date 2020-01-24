@@ -3,6 +3,7 @@ import 'package:bible_quadrangular/app/app_widget.dart';
 import 'package:bible_quadrangular/app/modules/book/book_module.dart';
 import 'package:bible_quadrangular/app/modules/chapter/chapter_module.dart';
 import 'package:bible_quadrangular/app/modules/home/home_module.dart';
+import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
 import 'package:bible_quadrangular/app/shared/services/bible_repository.dart';
 import 'package:bible_quadrangular/app/shared/utils/constants.dart';
 import 'package:dio/dio.dart';
@@ -25,6 +26,9 @@ class AppModule extends MainModule {
             transition: TransitionType.rightToLeftWithFade),
         Router('/bookmodule',
             module: BookModule(),
+            transition: TransitionType.rightToLeftWithFade),
+        Router('/versemodule',
+            module: VersesModule(),
             transition: TransitionType.rightToLeftWithFade)
       ];
 
