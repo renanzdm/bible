@@ -27,11 +27,11 @@ abstract class _BookBase with Store {
   takeAbreev(String value) => abreev = value;
 
   @observable
-  int verse;
+  int chapter;
   @action
   takeVerseSelect(int value) {
-    verse = value;
-    print(verse);
+    chapter = value;
+    print(chapter);
   }
 
   @action

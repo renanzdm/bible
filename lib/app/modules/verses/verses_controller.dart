@@ -16,7 +16,8 @@ abstract class _VersesBase with Store {
   ObservableFuture<ChapterModel> verses;
 
   @action
-  takeVerses({@required String abreev, @required int verse}) {
-    verses = _repository.getVerses(abreev: abreev, verse: verse).asObservable();
+  takeVerses({@required String abreev, @required int chapter}) {
+    verses =
+        _repository.getVerses(abreev: abreev, chapter: chapter).asObservable();
   }
 }

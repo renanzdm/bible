@@ -18,8 +18,8 @@ class BibleRepository extends Disposable {
   }
 
   Future<ChapterModel> getVerses(
-      {@required String abreev, @required int verse}) async {
-    final response = await client.get('/verses/nvi/$abreev/$verse');
+      {@required String abreev, @required int chapter}) async {
+    final response = await client.get('/verses/nvi/$abreev/$chapter');
     var resultVerses = (response.data);
     return ChapterModel.fromJson(resultVerses);
   }

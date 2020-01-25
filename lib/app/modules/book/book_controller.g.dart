@@ -60,21 +60,21 @@ mixin _$BookController on _BookBase, Store {
     }, _$abreevAtom, name: '${_$abreevAtom.name}_set');
   }
 
-  final _$verseAtom = Atom(name: '_BookBase.verse');
+  final _$chapterAtom = Atom(name: '_BookBase.chapter');
 
   @override
-  int get verse {
-    _$verseAtom.context.enforceReadPolicy(_$verseAtom);
-    _$verseAtom.reportObserved();
-    return super.verse;
+  int get chapter {
+    _$chapterAtom.context.enforceReadPolicy(_$chapterAtom);
+    _$chapterAtom.reportObserved();
+    return super.chapter;
   }
 
   @override
-  set verse(int value) {
-    _$verseAtom.context.conditionallyRunInAction(() {
-      super.verse = value;
-      _$verseAtom.reportChanged();
-    }, _$verseAtom, name: '${_$verseAtom.name}_set');
+  set chapter(int value) {
+    _$chapterAtom.context.conditionallyRunInAction(() {
+      super.chapter = value;
+      _$chapterAtom.reportChanged();
+    }, _$chapterAtom, name: '${_$chapterAtom.name}_set');
   }
 
   final _$_BookBaseActionController = ActionController(name: '_BookBase');

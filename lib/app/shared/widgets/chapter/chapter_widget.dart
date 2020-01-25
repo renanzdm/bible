@@ -23,7 +23,7 @@ class ChapterWidget extends StatelessWidget {
                 onTap: () {
                   _bookController.takeVerseSelect(index + 1);
                   Navigator.pushNamed(context,
-                      '/versemodule/${_bookController.abreev.toUpperCase()}');
+                      '/versemodule/${_bookController.abreev.toUpperCase()}/${_bookController.chapter.toString()}');
                 },
                 child: Container(
                   alignment: Alignment.center,

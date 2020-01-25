@@ -1,7 +1,5 @@
 import 'package:bible_quadrangular/app/modules/book/book_controller.dart';
 import 'package:bible_quadrangular/app/modules/book/book_module.dart';
-import 'package:bible_quadrangular/app/modules/verses/verses_controller.dart';
-import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
 import 'package:bible_quadrangular/app/shared/widgets/book/book_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
