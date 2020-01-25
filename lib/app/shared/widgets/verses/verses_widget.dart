@@ -11,10 +11,20 @@ class VersesWidget extends StatelessWidget {
       child: ListView.builder(
         itemCount: chapterModel.verses.length,
         itemBuilder: (BuildContext context, int index) {
-          var list = chapterModel.verses[index];
-          return Text(list.text);
+          var verse = chapterModel.verses[index];
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(verse.number.toString(),
+                  style: TextStyle(fontWeight: FontWeight.w300)),
+              Expanded(
+                child: Text(verse.text, style: TextStyle(fontSize: 16)),
+              ),
+            ],
+          );
         },
       ),
     );
   }
 }
+//  return Text('${list.number}' '${list.text}');

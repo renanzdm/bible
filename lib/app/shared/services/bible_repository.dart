@@ -1,6 +1,7 @@
 import 'package:bible_quadrangular/app/shared/models/book/book_model.dart';
 import 'package:bible_quadrangular/app/shared/models/chapter/chapter_model.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class BibleRepository extends Disposable {
@@ -16,8 +17,9 @@ class BibleRepository extends Disposable {
     return listBooks;
   }
 
-  Future<ChapterModel> getVerses() async {
-    final response = await client.get('/verses/nvi/gn/2');
+  Future<ChapterModel> getVerses(
+      {@required String abreev, @required int verse}) async {
+    final response = await client.get('/verses/nvi/$abreev/$verse');
     var resultVerses = (response.data);
     return ChapterModel.fromJson(resultVerses);
   }

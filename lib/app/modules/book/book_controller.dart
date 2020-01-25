@@ -21,6 +21,19 @@ abstract class _BookBase with Store {
     nunberChapter = book.chapters;
   }
 
+  @observable
+  String abreev;
+  @action
+  takeAbreev(String value) => abreev = value;
+
+  @observable
+  int verse;
+  @action
+  takeVerseSelect(int value) {
+    verse = value;
+    print(verse);
+  }
+
   @action
   takeBooks() {
     listBooks = _repository.getBooks().asObservable();

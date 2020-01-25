@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class ChapterPage extends StatefulWidget {
   final String title;
-  const ChapterPage({Key key, this.title = "Capítulos"}) : super(key: key);
+  const ChapterPage({Key key, this.title}) : super(key: key);
 
   @override
   _ChapterPageState createState() => _ChapterPageState();
@@ -25,9 +25,6 @@ class _ChapterPageState extends State<ChapterPage> {
           Expanded(
             child: ChapterWidget(
               numberChapters: _bookController.nunberChapter,
-              onTap: () {
-                Navigator.pushNamed(context, '/versemodule');
-              },
             ),
           )
         ],

@@ -29,10 +29,10 @@ mixin _$VersesController on _VersesBase, Store {
   final _$_VersesBaseActionController = ActionController(name: '_VersesBase');
 
   @override
-  dynamic getVerses() {
+  dynamic takeVerses({@required String abreev, @required int verse}) {
     final _$actionInfo = _$_VersesBaseActionController.startAction();
     try {
-      return super.getVerses();
+      return super.takeVerses(abreev: abreev, verse: verse);
     } finally {
       _$_VersesBaseActionController.endAction(_$actionInfo);
     }

@@ -1,5 +1,7 @@
 import 'package:bible_quadrangular/app/modules/book/book_controller.dart';
 import 'package:bible_quadrangular/app/modules/book/book_module.dart';
+import 'package:bible_quadrangular/app/modules/verses/verses_controller.dart';
+import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
 import 'package:bible_quadrangular/app/shared/widgets/book/book_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -15,6 +17,7 @@ class BookPage extends StatefulWidget {
 class _BookPageState extends State<BookPage> {
   //
   BookController _bookController = BookModule.to.get();
+
   @override
   void initState() {
     _bookController.takeBooks();
@@ -55,6 +58,10 @@ class _BookPageState extends State<BookPage> {
                     onTap: () async {
                       _bookController
                           .takeChapters(_bookController.listBooks.value[index]);
+
+                      _bookController.takeAbreev(
+                          _bookController.listBooks.value[index].abbrev.pt);
+
                       Navigator.pushNamed(context,
                           '/chaptermodule/${_bookController.listBooks.value[index].name}');
                     },

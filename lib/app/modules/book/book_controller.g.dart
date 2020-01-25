@@ -43,6 +43,40 @@ mixin _$BookController on _BookBase, Store {
     }, _$nunberChapterAtom, name: '${_$nunberChapterAtom.name}_set');
   }
 
+  final _$abreevAtom = Atom(name: '_BookBase.abreev');
+
+  @override
+  String get abreev {
+    _$abreevAtom.context.enforceReadPolicy(_$abreevAtom);
+    _$abreevAtom.reportObserved();
+    return super.abreev;
+  }
+
+  @override
+  set abreev(String value) {
+    _$abreevAtom.context.conditionallyRunInAction(() {
+      super.abreev = value;
+      _$abreevAtom.reportChanged();
+    }, _$abreevAtom, name: '${_$abreevAtom.name}_set');
+  }
+
+  final _$verseAtom = Atom(name: '_BookBase.verse');
+
+  @override
+  int get verse {
+    _$verseAtom.context.enforceReadPolicy(_$verseAtom);
+    _$verseAtom.reportObserved();
+    return super.verse;
+  }
+
+  @override
+  set verse(int value) {
+    _$verseAtom.context.conditionallyRunInAction(() {
+      super.verse = value;
+      _$verseAtom.reportChanged();
+    }, _$verseAtom, name: '${_$verseAtom.name}_set');
+  }
+
   final _$_BookBaseActionController = ActionController(name: '_BookBase');
 
   @override
@@ -50,6 +84,26 @@ mixin _$BookController on _BookBase, Store {
     final _$actionInfo = _$_BookBaseActionController.startAction();
     try {
       return super.takeChapters(book);
+    } finally {
+      _$_BookBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic takeAbreev(String value) {
+    final _$actionInfo = _$_BookBaseActionController.startAction();
+    try {
+      return super.takeAbreev(value);
+    } finally {
+      _$_BookBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic takeVerseSelect(int value) {
+    final _$actionInfo = _$_BookBaseActionController.startAction();
+    try {
+      return super.takeVerseSelect(value);
     } finally {
       _$_BookBaseActionController.endAction(_$actionInfo);
     }

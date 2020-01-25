@@ -12,7 +12,7 @@ class VersesModule extends ChildModule {
 
   @override
   List<Router> get routers => [
-        Router('/', child: (_, args) => VersesPage()),
+        Router('/:title', child: (_, args) => VersesPage(title: args.params['title'],)),
       ];
 
   static Inject get to => Inject<VersesModule>.of();

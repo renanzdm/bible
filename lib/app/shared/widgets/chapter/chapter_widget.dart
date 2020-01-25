@@ -1,14 +1,15 @@
+import 'package:bible_quadrangular/app/modules/book/book_controller.dart';
+import 'package:bible_quadrangular/app/modules/book/book_module.dart';
 import 'package:flutter/material.dart';
 
 class ChapterWidget extends StatelessWidget {
   final int numberChapters;
-  final Function onTap;
 
-  const ChapterWidget({Key key, this.numberChapters, this.onTap})
-      : super(key: key);
+  const ChapterWidget({Key key, this.numberChapters}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    BookController _bookController = BookModule.to.get();
     return Column(
       children: <Widget>[
         Expanded(
@@ -19,7 +20,11 @@ class ChapterWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 borderRadius: BorderRadius.circular(32),
-                onTap: onTap,
+                onTap: () {
+                  _bookController.takeVerseSelect(index + 1);
+                  Navigator.pushNamed(context,
+                      '/versemodule/${_bookController.abreev.toUpperCase()}');
+                },
                 child: Container(
                   alignment: Alignment.center,
                   child: Text(
