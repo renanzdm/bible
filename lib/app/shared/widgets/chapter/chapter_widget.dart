@@ -1,5 +1,5 @@
-import 'package:bible_quadrangular/app/modules/book/book_controller.dart';
-import 'package:bible_quadrangular/app/modules/book/book_module.dart';
+import 'package:bible_quadrangular/app/modules/home/home_controller.dart';
+import 'package:bible_quadrangular/app/modules/home/home_module.dart';
 import 'package:flutter/material.dart';
 
 class ChapterWidget extends StatelessWidget {
@@ -9,7 +9,7 @@ class ChapterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BookController _bookController = BookModule.to.get();
+    HomeController _bookController = HomeModule.to.get();
     return Column(
       children: <Widget>[
         Expanded(
@@ -19,7 +19,6 @@ class ChapterWidget extends StatelessWidget {
                 SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
-                borderRadius: BorderRadius.circular(32),
                 onTap: () {
                   _bookController.takeVerseSelect(index + 1);
                   Navigator.pushNamed(context,
@@ -33,19 +32,19 @@ class ChapterWidget extends StatelessWidget {
                   ),
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                      color: Theme.of(context).cardColor,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black38,
-                            offset: Offset(2, 2),
-                            blurRadius: 2),
-                        BoxShadow(
-                            color: Colors.grey[300],
-                            offset: Offset(-2, -2),
-                            blurRadius: 4)
-                      ],
-                      borderRadius: BorderRadius.circular(32),
-                      border: Border.all(color: Colors.black38)),
+                    color: Color.fromRGBO(250, 250, 250, 1),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade200,
+                          offset: Offset(4, 6),
+                          blurRadius: 5),
+                      BoxShadow(
+                        color: Colors.white,
+                        offset: Offset(-2, -2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(32),
+                  ),
                 ),
               );
             },

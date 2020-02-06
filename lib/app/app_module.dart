@@ -1,6 +1,5 @@
 import 'package:bible_quadrangular/app/app_controller.dart';
 import 'package:bible_quadrangular/app/app_widget.dart';
-import 'package:bible_quadrangular/app/modules/book/book_module.dart';
 import 'package:bible_quadrangular/app/modules/chapter/chapter_module.dart';
 import 'package:bible_quadrangular/app/modules/home/home_module.dart';
 import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
@@ -20,12 +19,11 @@ class AppModule extends MainModule {
 
   @override
   List<Router> get routers => [
-        Router('/', module: HomeModule()),
+        Router('/',
+            module: HomeModule(),
+            transition: TransitionType.rightToLeftWithFade),
         Router('/chaptermodule',
             module: ChapterModule(),
-            transition: TransitionType.rightToLeftWithFade),
-        Router('/bookmodule',
-            module: BookModule(),
             transition: TransitionType.rightToLeftWithFade),
         Router('/versemodule',
             module: VersesModule(),

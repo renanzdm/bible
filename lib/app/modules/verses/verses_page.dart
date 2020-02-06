@@ -1,5 +1,5 @@
-import 'package:bible_quadrangular/app/modules/book/book_controller.dart';
-import 'package:bible_quadrangular/app/modules/book/book_module.dart';
+import 'package:bible_quadrangular/app/modules/home/home_controller.dart';
+import 'package:bible_quadrangular/app/modules/home/home_module.dart';
 import 'package:bible_quadrangular/app/modules/verses/verses_controller.dart';
 import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
 import 'package:bible_quadrangular/app/shared/widgets/verses/verses_widget.dart';
@@ -18,7 +18,7 @@ class VersesPage extends StatefulWidget {
 
 class _VersesPageState extends State<VersesPage> {
   VersesController _versesController = VersesModule.to.get();
-  BookController _bookController = BookModule.to.get();
+  HomeController _bookController = HomeModule.to.get();
   @override
   void initState() {
     _versesController.takeVerses(
