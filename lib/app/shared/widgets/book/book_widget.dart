@@ -12,8 +12,9 @@ class BookWidget extends StatelessWidget {
       child: Card(
         child: ListTile(
           onTap: onTap,
+          // trailing: Text('${booksModel.chapters}/${booksModel.chapters}'),
           leading: CircleAvatar(
-            child: Text(booksModel.abbrev.pt),
+            child: Text(booksModel.abbrev.pt.toUpperCase()),
           ),
           title: Text(booksModel.name),
           subtitle: Text(booksModel.group),

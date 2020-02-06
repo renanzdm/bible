@@ -47,8 +47,13 @@ class _VersesPageState extends State<VersesPage> {
                 );
               }
               return Expanded(
-                child: VersesWidget(
-                  chapterModel: _versesController.verses.result,
+                child: ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    List verses = _versesController.verses.result[index].verse;
+                    return VerseWidget(
+                      verse: verses[1],
+                    );
+                  },
                 ),
               );
             },
