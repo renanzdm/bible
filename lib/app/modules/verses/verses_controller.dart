@@ -21,7 +21,7 @@ abstract class _VersesBase with Store {
   @action
   setColor(Color value) {
     color = value;
-    print(color);
+    print(color.toString());
   }
 
   @action

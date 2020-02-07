@@ -53,8 +53,9 @@ class _VersesPageState extends State<VersesPage> {
                     var verse = _versesController.verses.value.verses[index];
                     return VerseWidget(
                       verse: verse,
+                      color: _versesController.color,
                       onLongPress: () {
-                        _versesController.setColor(Colors.red);
+                        _versesController.setColor(Colors.green);
                       },
                     );
                   },
