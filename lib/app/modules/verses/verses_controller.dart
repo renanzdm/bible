@@ -15,6 +15,15 @@ abstract class _VersesBase with Store {
   @observable
   ObservableFuture<ChapterModel> verses;
 
+  @observable
+  Color color;
+
+  @action
+  setColor(Color value) {
+    color = value;
+    print(color);
+  }
+
   @action
   takeVerses({@required String abreev, @required int chapter}) {
     verses =

@@ -1,13 +1,16 @@
+import 'package:bible_quadrangular/app/modules/verses/verses_controller.dart';
+import 'package:bible_quadrangular/app/modules/verses/verses_module.dart';
 import 'package:bible_quadrangular/app/shared/models/chapter/chapter_model.dart';
 import 'package:flutter/material.dart';
 
 class VerseWidget extends StatelessWidget {
   final Verse verse;
-  final Color color;
+  final Function onLongPress;
 
-  const VerseWidget({Key key, this.verse, this.color}) : super(key: key);
+  const VerseWidget({Key key, this.verse, this.onLongPress}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    VersesController controller = VersesModule.to.get();
     return Container(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -15,7 +18,12 @@ class VerseWidget extends StatelessWidget {
           Text(verse.number.toString(),
               style: TextStyle(fontWeight: FontWeight.w300)),
           Expanded(
-            child: Text(verse.text, style: TextStyle(fontSize: 16)),
+            
+               child:Text(
+                verse.text,
+                style: TextStyle(fontSize: 16,color: controller.color),
+              ),
+            
           ),
         ],
       ),

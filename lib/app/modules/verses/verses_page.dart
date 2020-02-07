@@ -48,10 +48,14 @@ class _VersesPageState extends State<VersesPage> {
               }
               return Expanded(
                 child: ListView.builder(
+                  itemCount: _versesController.verses.value.verses.length,
                   itemBuilder: (BuildContext context, int index) {
-                    List verses = _versesController.verses.result[index].verse;
+                    var verse = _versesController.verses.value.verses[index];
                     return VerseWidget(
-                      verse: verses[1],
+                      verse: verse,
+                      onLongPress: () {
+                        _versesController.setColor(Colors.red);
+                      },
                     );
                   },
                 ),
