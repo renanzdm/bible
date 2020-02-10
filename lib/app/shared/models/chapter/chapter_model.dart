@@ -1,7 +1,9 @@
+import 'package:bible_quadrangular/app/shared/models/verse_model.dart';
+
 class ChapterModel {
   Book book;
   Chapter chapter;
-  List<Verse> verses;
+  List<VerseModel> verses;
 
   ChapterModel({
     this.book,
@@ -12,7 +14,8 @@ class ChapterModel {
   factory ChapterModel.fromJson(Map<String, dynamic> json) => ChapterModel(
         book: Book.fromJson(json["book"]),
         chapter: Chapter.fromJson(json["chapter"]),
-        verses: List<Verse>.from(json["verses"].map((x) => Verse.fromJson(x))),
+        verses: List<VerseModel>.from(
+            json["verses"].map((x) => VerseModel.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -91,25 +94,5 @@ class Chapter {
   Map<String, dynamic> toJson() => {
         "number": number,
         "verses": verses,
-      };
-}
-
-class Verse {
-  int number;
-  String text;
-
-  Verse({
-    this.number,
-    this.text,
-  });
-
-  factory Verse.fromJson(Map<String, dynamic> json) => Verse(
-        number: json["number"],
-        text: json["text"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "number": number,
-        "text": text,
       };
 }

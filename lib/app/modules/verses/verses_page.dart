@@ -33,6 +33,7 @@ class _VersesPageState extends State<VersesPage> {
         title: Text('${widget.title} ${widget.chapter}'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Observer(
             builder: (_) {
@@ -53,10 +54,6 @@ class _VersesPageState extends State<VersesPage> {
                     var verse = _versesController.verses.value.verses[index];
                     return VerseWidget(
                       verse: verse,
-                      color: _versesController.color,
-                      onLongPress: () {
-                        _versesController.setColor(Colors.green);
-                      },
                     );
                   },
                 ),
