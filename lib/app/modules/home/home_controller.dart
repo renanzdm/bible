@@ -31,7 +31,6 @@ abstract class _HomeBase with Store {
   @action
   takeVerseSelect(int value) {
     chapter = value;
-    print(chapter);
   }
 
   @action

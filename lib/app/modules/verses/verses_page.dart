@@ -8,7 +8,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 
 class VersesPage extends StatefulWidget {
   final String title;
-  final int chapter;
+  final String chapter;
   const VersesPage({Key key, this.title = "Verses", this.chapter})
       : super(key: key);
 
@@ -18,11 +18,12 @@ class VersesPage extends StatefulWidget {
 
 class _VersesPageState extends State<VersesPage> {
   VersesController _versesController = VersesModule.to.get();
-  HomeController _bookController = HomeModule.to.get();
+  HomeController _homeController = HomeModule.to.get();
   @override
   void initState() {
+    print(widget.chapter.runtimeType);
     _versesController.takeVerses(
-        abreev: _bookController.abreev, chapter: _bookController.chapter);
+        abreev: _homeController.abreev, chapter: _homeController.chapter);
     super.initState();
   }
 

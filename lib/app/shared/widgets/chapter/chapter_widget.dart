@@ -9,7 +9,7 @@ class ChapterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController _bookController = HomeModule.to.get();
+    HomeController _homeController = HomeModule.to.get();
     return Column(
       children: <Widget>[
         Expanded(
@@ -20,9 +20,9 @@ class ChapterWidget extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  _bookController.takeVerseSelect(index + 1);
+                  _homeController.takeVerseSelect(index + 1);
                   Navigator.pushNamed(context,
-                      '/versemodule/${_bookController.abreev.toUpperCase()}/${_bookController.chapter.toString()}');
+                      '/versemodule/${_homeController.abreev.toUpperCase()}/${_homeController.chapter}');
                 },
                 child: Container(
                   alignment: Alignment.center,
